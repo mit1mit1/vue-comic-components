@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ManFigure from "./svgs/ManFigure.vue";
 import ComicBox from "./components/ComicBox.vue";
-import Panel from "./components/Panel.vue";
+import Panel from "./components/PanelBox.vue";
 import BibleFigure from "./svgs/BibleFigure.vue";
 import BeanieMan from "./svgs/BeanieMan.vue";
 import NavigationBar from "./components/NavigationBar.vue";
