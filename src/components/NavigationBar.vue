@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { getComicNumber, setComic } from "../utils/comicNumber";
-defineProps<{
+import { toRefs } from "vue";
+const props = defineProps<{
   comicList: Array<string>;
 }>();
+const { comicList } = toRefs(props);
 </script>
 
 <template>
