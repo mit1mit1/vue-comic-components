@@ -14,4 +14,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.comic-box a {
+  color: darkblue;
+  text-decoration: underline;
+}
 </style>
