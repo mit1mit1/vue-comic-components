@@ -120,6 +120,14 @@ export const availableArmPositions: Record<string, ArmPosition> = {
     fingertipXPercent: -0.98,
     fingertipYUp: false,
   },
+  rightArmPointingNorthEast: {
+    elbowXPercent: 0.4,
+    elbowYUp: false,
+    wristXPercent: 0.6,
+    wristYUp: true,
+    fingertipXPercent: 0.76,
+    fingertipYUp: true,
+  },
   rightArmPointingSouthEast: {
     elbowXPercent: 0.4,
     elbowYUp: false,
@@ -247,6 +255,13 @@ export const availableLimbPositions: Record<string, LimbPositions> = {
   rightHandPointingSouthEast: {
     leftArmPosition: availableArmPositions.leftArmCasual,
     rightArmPosition: availableArmPositions.rightArmPointingSouthEast,
+    leftLegPosition: availableLegPositions.leftCasualStance,
+    rightLegPosition: availableLegPositions.rightCasualStance,
+  },
+
+  rightHandPointingNorthEast: {
+    leftArmPosition: availableArmPositions.leftArmCasual,
+    rightArmPosition: availableArmPositions.rightArmPointingNorthEast,
     leftLegPosition: availableLegPositions.leftCasualStance,
     rightLegPosition: availableLegPositions.rightCasualStance,
   },
