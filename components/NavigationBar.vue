@@ -9,13 +9,17 @@ const { comicList } = toRefs(props);
 
 <template>
   <div class="nav-bar">
-    <button :onclick="() => setComic(comicList, 0)">&lt; &lt; First</button>
-    <button :onclick="() => setComic(comicList, getComicNumber(comicList) - 1)">&lt; Prev</button>
+    <button v-if="getComicNumber(comicList) > 0" :onclick="() => setComic(comicList, 0)">&lt; &lt; First</button>
+    <div v-else class="buttonPlaceholder"></div>
+    <button v-if="getComicNumber(comicList) > 0" :onclick="() => setComic(comicList, getComicNumber(comicList) - 1)">&lt; Prev</button>
+    <div v-else class="buttonPlaceholder"></div>
     <button :onclick="() => setComic(comicList, Math.floor(Math.random() * comicList.length))">
       Random
     </button>
-    <button :onclick="() => setComic(comicList, getComicNumber(comicList) + 1)">Next ></button>
-    <button :onclick="() => setComic(comicList, comicList.length - 1)">Last > ></button>
+    <button v-if="getComicNumber(comicList) < comicList.length - 1" :onclick="() => setComic(comicList, getComicNumber(comicList) + 1)">Next ></button>
+    <div v-else class="buttonPlaceholder"></div>
+    <button v-if="getComicNumber(comicList) < comicList.length - 1" :onclick="() => setComic(comicList, comicList.length - 1)">Last > ></button>
+    <div v-else class="buttonPlaceholder"></div>
   </div>
 </template>
 
@@ -39,6 +43,14 @@ button {
   min-width: 100px;
   font-size: 0.95em;
   font-family: "Quicksand", sans-serif;
+}
+
+.buttonPlaceholder {
+  min-width: 100px;
+  min-height: 40px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  min-height: 40px;
 }
 
 button:hover {
