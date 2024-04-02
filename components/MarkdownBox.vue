@@ -9,6 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
+  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(245, 245, 245);
