@@ -13,7 +13,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: #ddd;
-  font-family: Quicksand;
+  font-family: "Quicksand", sans-serif;
   font-size: 16px;
 }
 </style>
