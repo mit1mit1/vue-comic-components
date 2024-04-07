@@ -9,16 +9,23 @@ const { comicList } = toRefs(props);
 
 <template>
   <div class="nav-bar">
-    <button v-if="getComicNumber(comicList) > 0" :onclick="() => setComic(comicList, 0)">&lt; &lt; First</button>
+    <button class="button" aria-label="First" v-if="getComicNumber(comicList) > 0" :onclick="() => setComic(comicList, 0)">&lt; &lt; <span
+        class="hideOnMobile">First</span></button>
     <div v-else class="buttonPlaceholder"></div>
-    <button v-if="getComicNumber(comicList) > 0" :onclick="() => setComic(comicList, getComicNumber(comicList) - 1)">&lt; Prev</button>
+    <button class="button" aria-label="Previous" v-if="getComicNumber(comicList) > 0"
+      :onclick="() => setComic(comicList, getComicNumber(comicList) - 1)">&lt; <span
+        class="hideOnMobile">Prev</span></button>
     <div v-else class="buttonPlaceholder"></div>
-    <button :onclick="() => setComic(comicList, Math.floor(Math.random() * comicList.length))">
-      Random
+    <button class="button" aria-label="Random" :onclick="() => setComic(comicList, Math.floor(Math.random() * comicList.length))">
+      <span
+        class="hideOnMobile">Random</span><span class="showOnMobile">?</span>
     </button>
-    <button v-if="getComicNumber(comicList) < comicList.length - 1" :onclick="() => setComic(comicList, getComicNumber(comicList) + 1)">Next ></button>
+    <button class="button" aria-label="Next" v-if="getComicNumber(comicList) < comicList.length - 1"
+      :onclick="() => setComic(comicList, getComicNumber(comicList) + 1)"><span class="hideOnMobile">Next</span>
+      ></button>
     <div v-else class="buttonPlaceholder"></div>
-    <button v-if="getComicNumber(comicList) < comicList.length - 1" :onclick="() => setComic(comicList, comicList.length - 1)">Last > ></button>
+    <button class="button" aria-label="Last" v-if="getComicNumber(comicList) < comicList.length - 1"
+      :onclick="() => setComic(comicList, comicList.length - 1)"><span class="hideOnMobile">Last</span> > ></button>
     <div v-else class="buttonPlaceholder"></div>
   </div>
 </template>
@@ -33,7 +40,11 @@ const { comicList } = toRefs(props);
   flex-wrap: wrap;
 }
 
-button {
+.showOnMobile {
+  display: none;
+}
+
+.button {
   margin-right: 10px;
   margin-bottom: 5px;
   transition-duration: 0.4s;
@@ -56,5 +67,23 @@ button {
 button:hover {
   background-color: #ffb7c5;
   cursor: pointer;
+}
+
+@media(max-width: 768px) {
+  .button {
+    min-width: 40px;
+  }
+
+  .buttonPlaceholder {
+    min-width: 40px;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .showOnMobile {
+    display: initial;
+  }
 }
 </style>
