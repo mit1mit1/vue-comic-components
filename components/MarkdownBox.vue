@@ -17,9 +17,8 @@
   border-radius: 10px;
   line-height: 1.5;
   word-wrap: break-word;
-  font-family:  "system-ui", "monospace", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-weight: 100;
-
+  font-weight: 200;
+  font-family: var(--font-family-standard, "system-ui", "monospace", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji");
 }
 
 .markdown-box a {
@@ -27,7 +26,10 @@
   text-decoration: underline;
 }
 
-.markdown-box h1,
+.markdown-box h1 {
+  font-family: var(--font-family-handwritten, "Architects Daughter");
+}
+
 .markdown-box h2,
 .markdown-box h3,
 .markdown-box h4,
@@ -78,4 +80,3 @@
   margin-top: 16px;
 }
 </style>
-
